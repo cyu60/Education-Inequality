@@ -3,6 +3,8 @@ am4core.useTheme(am4themes_animated);
 // Create chart instance
 var chart = am4core.create("hzbarchart", am4charts.XYChart);
 
+chart.responsive.enabled = true;
+
 // Create Title
 var title = chart.titles.create();
 title.text = "In a study by the PEAR institute of 160 afterschool STEM programs serving 1,600 students across 11 states:";

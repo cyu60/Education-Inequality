@@ -1,52 +1,75 @@
+vBarChartData = {
+  "data1": [
+  {
+    "category": "STEM Occupations",
+    "value1": 8
+  },
+  {
+    "category": "Non-STEM Occupations",
+    "value1": 3.4
+  }
+], "data2": [
+  {
+    "category": "STEM Occupations",
+    "value1": 89780
+  },{
+    "category": "Non-STEM Occupations",
+    "value1": 40020
+  }
+]}
+
+var vChartDataName1 = "Projected Employment Change(2019-29)"
+var vChartDataName2 = 'Median Annual Wage(2020)'
+
 /* Create the chart */
-var chart = am4core.create("vBarChart", am4charts.XYChart);
+var vBarChart = am4core.create("vBarChart", am4charts.XYChart);
 
-/* Make automatic colors more distinctive by increasing steps */
-chart.colors.step = 2;
-
-/* Set data */
-chart.data = [ {
-  "category": "STEM Occupations",
-  "value1": 8,
-  "value2": 89780
-}, {
-  "category": "Non-STEM Occupations",
-  "value1": 3.4,
-  "value2": 40020
-}];
+vBarChart.data = vBarChartData.data1
 
 /* Add legend */
-chart.legend = new am4charts.Legend();
+vBarChart.legend = new am4charts.Legend();
 
 /* Add category axis */
-var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+var categoryAxis = vBarChart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "category";
 categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.renderer.minGridDistance = 30;
 
 /* Add value axis */
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+var valueAxis = vBarChart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.min = 0;
 
 /* Add column series */
-var series1 = chart.series.push(new am4charts.ColumnSeries());
-series1.tooltipText = "{name}: {valueY.value}";
-series1.name = "Projected employment change 2019-29";
+var series1 = vBarChart.series.push(new am4charts.ColumnSeries());
+series1.tooltipText = "{name}: {value1}";
+series1.name = vChartDataName1;
 series1.dataFields.categoryX = "category";
 series1.dataFields.valueY = "value1";
-series1.defaultState.transitionDuration = 5000;
-series1.hiddenState.transitionDuration = 5000;
+series1.defaultState.transitionDuration = 10000;
+series1.hiddenState.transitionDuration = 10000;
 
-/* Add line series */
-var series2 = chart.series.push(new am4charts.ColumnSeries());
-series2.tooltipText = "{name}: {valueY.value}";
-series2.name = "Median annual wage, 2020";
-series2.dataFields.categoryX = "category";
-series2.dataFields.valueY = "value2";
+// /* Add line series */
+// var series2 = vBarChart.series.push(new am4charts.ColumnSeries());
+// series2.tooltipText = "{name}: {valueY.value}";
+// series2.name = "Median annual wage, 2020";
+// series2.dataFields.categoryX = "category";
+// series2.dataFields.valueY = "value2";
 
 /* Add chart cursor */
-chart.cursor = new am4charts.XYCursor();
-chart.cursor.xAxis = categoryAxis;
-chart.cursor.fullWidthLineX = true;
-chart.cursor.lineX.strokeWidth = 0;
-chart.cursor.lineX.fill = am4core.color("#8F3985");
-chart.cursor.lineX.fillOpacity = 0.1;
+vBarChart.cursor = new am4charts.XYCursor();
+vBarChart.cursor.xAxis = categoryAxis;
+vBarChart.cursor.fullWidthLineX = true;
+vBarChart.cursor.lineX.strokeWidth = 0;
+vBarChart.cursor.lineX.fill = am4core.color("#8F3985");
+vBarChart.cursor.lineX.fillOpacity = 0.1;
+
+function selectVBarChartDataset(set) {
+  vBarChart.data = vBarChartData[set];
+  console.log(vBarChartData[set])
+  if(set === 'data1'){
+    series1.name = vChartDataName1
+  }
+  else{
+    series1.name = vChartDataName2
+  }
+}
+

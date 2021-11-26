@@ -35,6 +35,8 @@
 
     <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/geodata/usaLow.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <style type="text/css">
         h1{
@@ -91,11 +93,6 @@
             font-family: Monaco, monospace;
         }
 
-        #donutchart {
-            height: 200px;
-            width: 100%;
-            margin-left: 25%;
-        }
     </style>
 </head>
 <body>
@@ -107,12 +104,16 @@
         <p>Among the myriad of structural, intractable, and complex problems that dominate the American education landscape, access to extracurricular activities stands as one of the largest gaps between the haves and have-nots. Low-income and minority students are at a structural disadvantage when it comes to accessing extracurricular activities, being three times less likely to participate in after-school programs[1]. Research has documented a consistently positive relationship between extracurricular participation and educational backgrounds[2]. More specifically, a student's participation in extracurricular activities has been linked to self-confidence, commitment to school values, heightened educational expectations, improved grades, higher standardized test scores, better cognitive & noncognitive skills, retention, and long-term outcomes such as college enrollment and college completion[3].</p>
 
         <br>
-        <div id="usamap" style="width: 60%; margin-left: 20%;"></div>
+        <div id="usmap2" style="width: 50%; height: 600px; margin-left: 25%;" ></div>
         <br>
 
         <h3><u>Importance of STEM Extracurricular</u></h3>
         <p>The United States Bureau of Labor Statistics expects STEM occupations to grow by 8% between 2019 and 2029, compared to 3.4% for non-STEM occupations[4]. Wages for STEM occupations are also estimated to be more than double those of non-STEM, potentially providing a pathway to financial independence for students from low-income communities.</p>
         
+        <select id='vBarChartData' style="display: inline-block; margin-left: 25%; width: auto;" onchange="selectVBarChartDataset(this.options[this.selectedIndex].value);">
+            <option value="data1">Projected Employment Change 2019-29</option>
+            <option value="data2">Median Annual Wage(2020)</option>
+        </select>
         <div id="vBarChart" style="width: 50%; height: 500px; margin-left: 25%;"></div>
 
         <p>Research shows that the experience students have with STEM in extracurricular settings can have a profound effect on their decision to pursue STEM in college or as a career. Students benefit immensely from the opportunity to engage in hands-on, informal STEM learning in environments that provide encouragement [5]. Over the last decade, after school programs have become a crucial means of access to these sorts of environments.  </p>
@@ -121,14 +122,21 @@
         
         <p>Furthermore, after school extracurriculars in STEM are providing learning opportunities in demographic groups traditionally underrepresented in STEM.</p>
         
-        <div id="donutchart"></div>
+        <select id='donutChartData' style="display: inline-block; margin-left: 25%;" onchange="selectDonutChartDataset(this.options[this.selectedIndex].value);">
+            <option value="data1">Availability of afterschool STEM learning opportunities by ethnicity</option>
+            <option value="data2">STEM jobs by race and ethnicity</option>
+        </select>
+
+        <br>
+
+        <div id="donutchart" style="width: 100%; height: 400px; padding-top: 10px;"></div>
         
         <br>
 
         <h3><u>The Extracurricular Gap as it Applies to STEM</u></h3>
         <p>Despite the clear importance of extracurricular STEM education, access is less available to families with lower incomes and under-resourced regions.</p>
         
-        <div id="usmap2" style="width: 50%; height: 600px; margin-left: 25%;"></div>
+        <div id="usamap" style="width: 60%; margin-left: 20%;"></div>
         <p>[This is a chart]</p>
         
         <p>Further, barriers to participation have been increasing. Compared to 2014, challenges related to cost, transportation, and availability have increased. </p>
