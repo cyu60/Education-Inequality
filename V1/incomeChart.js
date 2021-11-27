@@ -134,7 +134,7 @@ const createChart = (tagId, lowIncome, highIncome, titleText) => {
 // Create a map for titles
 const data = {
     "Technology and engineering": { lowIncome: 27, highIncome: 44 },
-    "Science learning": { lowIncome: 43, highIncome: 57},
+    "Science Learning": { lowIncome: 43, highIncome: 57},
     "Computer Science": { lowIncome: 33, highIncome: 48},
     "Math activities": { lowIncome: 65, highIncome: 65},
 }
