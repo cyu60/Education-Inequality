@@ -22,7 +22,7 @@ const createChart = (tagId, lowIncome, highIncome, titleText) => {
   // Add legend
   var legend = new am4charts.Legend();
   legend.isMeasured = false;
-  legend.y = am4core.percent(100);
+  legend.y = am4core.percent(105);
   legend.verticalCenter = "bottom";
   legend.parent = chart.chartContainer;
   legend.data = [
@@ -46,8 +46,8 @@ const createChart = (tagId, lowIncome, highIncome, titleText) => {
   labelList.template.isMeasured = false;
   labelList.template.background.strokeWidth = 2;
   labelList.template.fontSize = 25;
-  labelList.template.padding(20, 20, 10, 20);
-  labelList.template.y = am4core.percent(70);
+  labelList.template.padding(5, 5, 5, 5);
+  labelList.template.y = am4core.percent(80);
   labelList.template.horizontalCenter = "middle";
 
   var lowIncomeLabel = labelList.create();

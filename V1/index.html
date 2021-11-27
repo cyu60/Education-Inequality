@@ -75,6 +75,12 @@
         font-family: Monaco, monospace;
         font-style: italic;
       }
+      h4 {
+        /* color: lightblue; */
+        text-align: center;
+        font-family: Monaco, monospace;
+        font-style: bold;
+      }
       p {
         font-family: Monaco, monospace;
         width: 50%;
@@ -119,9 +125,22 @@
   </head>
   <body>
     <div class="container">
-      <h1>Title</h1>
+      <header class="d-flex py-3">
+      <!-- <header class="d-flex justify-content-center py-3"> -->
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="#ecaGap" class="nav-link">The Extracurricular Gap
+            </a>
+          </li>
+          <li class="nav-item"><a href="#stemEcaImportance" class="nav-link">Importance of STEM Extracurricular</a></li>
+          <li class="nav-item"><a href="#ecaGapStem" class="nav-link">The Extracurricular Gap as it Applies to STEM</a></li>
+          <li class="nav-item"><a href="#movingForwards" class="nav-link">Moving Forwards</a></li>
+          <li class="nav-item"><a href="#references" class="nav-link">References</a></li>
+        </ul>
+      </header>
+      <h1>Educational inequality</h1>
 
-      <h3><u>Importance & Inherency of the Extracurricular Gap</u></h3>
+      <h3 id="ecaGap"><u>Importance & Inherency of the Extracurricular Gap</u></h3>
       <p>
         Among the myriad of structural, intractable, and complex problems that
         dominate the American education landscape, access to extracurricular
@@ -146,7 +165,7 @@
       ></div>
       <br />
 
-      <h3><u>Importance of STEM Extracurricular</u></h3>
+      <h3 id="stemEcaImportance"><u>Importance of STEM Extracurricular</u></h3>
       <p>
         The United States Bureau of Labor Statistics expects STEM occupations to
         grow by 8% between 2019 and 2029, compared to 3.4% for non-STEM
@@ -208,7 +227,7 @@
 
       <br />
 
-      <h3><u>The Extracurricular Gap as it Applies to STEM</u></h3>
+      <h3 id="ecaGapStem"><u>The Extracurricular Gap as it Applies to STEM</u></h3>
       <p>
         Despite the clear importance of extracurricular STEM education, access
         is less available to families with lower incomes and under-resourced
@@ -216,23 +235,25 @@
       </p>
 
       <select
-      style="display: inline-block; margin-left: 25%; width: auto"
-      onchange="selectIncomeChartDataset(this.options[this.selectedIndex].value);"
-      class="form-select"
+        style="display: inline-block; margin-left: 25%; width: auto"
+        onchange="selectIncomeChartDataset(this.options[this.selectedIndex].value);"
+        class="form-select"
       >
-      <option selected value="Technology and engineering">Technology and engineering</option>
+        <option selected value="Technology and engineering">
+          Technology and engineering
+        </option>
         <option value="Math activities">Math activities</option>
         <option value="Computer Science">Computer Science</option>
         <option value="Science Learning">Science Learning</option>
-    </select>
-    <div
+      </select>
+      <div
         id="incomeChart"
         style="width: 60%; height: 400px; margin-left: 20%"
-    ></div>
+      ></div>
 
       <p>[This is a chart]</p>
 
-      <div id="usamap" style="width: 60%; margin-left: 20%"></div>
+      <!-- <div id="usamap" style="width: 60%; margin-left: 20%"></div> -->
 
       <p>
         Further, barriers to participation have been increasing. Compared to
@@ -241,7 +262,27 @@
       </p>
 
       <p>[This is a chart]</p>
+      <h4>Percentage of parents reporting that:</h4>
 
+      <select
+        style="display: inline-block; margin-left: 25%; width: auto"
+        onchange="selectParentsChartDataset(this.options[this.selectedIndex].value);"
+        class="form-select"
+      >
+        <option selected value="Programs are too expensive">
+          Programs are too expensive
+        </option>
+        <option value="Transportation issues, no safe way to and from program">
+          Transportation issues, no safe way to and from program
+        </option>
+        <option value="Lack of available programs">
+          Lack of available programs
+        </option>
+      </select>
+      <div
+        id="parentsChart"
+        style="width: 60%; height: 400px; margin-left: 20%"
+      ></div>
       <p>
         Looking at the geographic distribution of where facilities for
         extracurricular activities can occur, it is clear that access is not
@@ -252,7 +293,7 @@
 
       <br />
 
-      <h3><u>Moving Forwards</u></h3>
+      <h3 id="movingForwards"><u>Moving Forwards</u></h3>
       <p>
         It is clear that the need for afterschool STEM extracurriculars exists,
         while at the sametime barriers to participation have increased. Taken
@@ -269,7 +310,7 @@
             <script src="https://public.flourish.studio/resources/embed.js"></script>
         </div> -->
 
-      <h3><u>Refereces</u></h3>
+      <h3 id="references"><u>Refereces</u></h3>
       <ul>
         <li>
           [1] Little, Priscilla. “Taking a Systemic Approach to Access and
@@ -310,4 +351,5 @@
   <script src="usmap2.js"></script>
   <script src="vBarChart.js"></script>
   <script src="incomeChart.js"></script>
+  <script src="parentsBarChart.js"></script>
 </html>
