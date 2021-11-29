@@ -70,16 +70,22 @@ pieSeries.labels.template.adapter.add("fill", function(color, target) {
 donutChart.legend = new am4charts.Legend();
 donutChart.legend.valueLabels.template.disabled = true;
 
-var donutChartLabel = donutChart.chartContainer.createChild(am4core.Label);
-donutChartLabel.text = donutChartTitle1;
-donutChartLabel.align = "center";
+// var donutChartLabel = donutChart.chartContainer.createChild(am4core.Label);
+// donutChartLabel.text = donutChartTitle1;
+// donutChartLabel.align = "center";
+
+// Add title
+var donutChartitle = donutChart.titles.create();
+donutChartitle.text = donutChartTitle1;
+donutChartitle.fontSize = 25;
+donutChartitle.marginBottom = 30;
 
 function selectDonutChartDataset(set) {
   donutChart.data = donutChartData[set];
   if(set === 'data1'){
-    donutChartLabel.text = donutChartTitle1
+    donutChartitle.text = donutChartTitle1
   }
   else{
-    donutChartLabel.text = donutChartTitle2
+    donutChartitle.text = donutChartTitle2
   }
 }

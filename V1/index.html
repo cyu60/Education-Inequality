@@ -4,22 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HCI Project 2</title>
-    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+
+    <link rel="stylesheet" href="style.css">
+
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <!-- <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
 
-    <script src="https://unpkg.com/topojson@3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3-zoom@3"></script> -->
-
-    <!-- <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> -->
-
-    <!-- <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-    <script src="https://cdn.amcharts.com/lib/4/maps.js"></script> -->
 
     <script
       type="text/javascript"
@@ -51,6 +40,7 @@
     <script src="https://cdn.amcharts.com/lib/4/geodata/usaLow.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -62,7 +52,12 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
     <style type="text/css">
+      body{
+        width: 65%;
+        margin-left: 20%;
+      }
       h1 {
         color: purple;
         text-align: center;
@@ -75,44 +70,23 @@
         font-family: Monaco, monospace;
         font-style: italic;
       }
+      #team{
+        color: purple;
+      }
       h4 {
-        /* color: lightblue; */
         text-align: center;
         font-family: Monaco, monospace;
         font-style: bold;
       }
       p {
         font-family: Monaco, monospace;
-        width: 50%;
-        margin-left: 25%;
       }
-      ul {
-        list-style-type: none;
+      #ref {
         font-family: Monaco, monospace;
-        width: 50%;
-        margin-left: 25%;
       }
-
-      /* .label {
-            font-size: 1vw;
-            font-family: 'sans-serif';
-            alignment-baseline: middle;
-            fill: black;
-        }
-        .number, .subtitle {
-            font-size: 20pt;
-            font-family: 'sans-serif';
-            alignment-baseline: middle;
-            fill: #890000;
-        }
-        .bar {
-            fill: lightblue;
-        } */
 
       #hzbarchart {
-        width: 60%;
         height: 230px;
-        margin-left: 20%;
         font-family: Monaco, monospace;
       }
 
@@ -121,124 +95,132 @@
         font-weight: bold;
         font-family: Monaco, monospace;
       }
+      text{
+        justify-content: center;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <header class="d-flex py-3">
-      <!-- <header class="d-flex justify-content-center py-3"> -->
+      <header class="d-flex py-3 justify-content-center" style="background-color: #e3f2fd;">
         <ul class="nav nav-pills">
           <li class="nav-item">
-            <a href="#ecaGap" class="nav-link">The Extracurricular Gap
+            <a href="#ecaGap" class="nav-link">The Extracurricular Gap >
             </a>
           </li>
-          <li class="nav-item"><a href="#stemEcaImportance" class="nav-link">Importance of STEM Extracurricular</a></li>
-          <li class="nav-item"><a href="#ecaGapStem" class="nav-link">The Extracurricular Gap as it Applies to STEM</a></li>
-          <li class="nav-item"><a href="#movingForwards" class="nav-link">Moving Forwards</a></li>
+          <li class="nav-item"><a href="#stemEcaImportance" class="nav-link">Why STEM Extracurriculars? ></a></li>
+          <li class="nav-item"><a href="#ecaGapStem" class="nav-link">The Extracurricular Gap: For STEM ></a></li>
+          <li class="nav-item"><a href="#movingForwards" class="nav-link">Moving Forwards ></a></li>
           <li class="nav-item"><a href="#references" class="nav-link">References</a></li>
         </ul>
       </header>
-      <h1>Educational inequality</h1>
-
-      <h3 id="ecaGap"><u>Importance & Inherency of the Extracurricular Gap</u></h3>
+      <br>
+      <h1>Educational Inequality</h1>
+      <h3 id="team">Mathias Insley, Keidai Lee, Chinat Yu, Pinhong He</h3>
+      <h3 id="ecaGap" class="divider line glow"><u>The Extracurricular Gap</u></h3>
       <p>
-        Among the myriad of structural, intractable, and complex problems that
-        dominate the American education landscape, access to extracurricular
-        activities stands as one of the largest gaps between the haves and
-        have-nots. Low-income and minority students are at a structural
-        disadvantage when it comes to accessing extracurricular activities,
-        being three times less likely to participate in after-school
-        programs[1]. Research has documented a consistently positive
-        relationship between extracurricular participation and educational
-        backgrounds[2]. More specifically, a student's participation in
-        extracurricular activities has been linked to self-confidence,
-        commitment to school values, heightened educational expectations,
-        improved grades, higher standardized test scores, better cognitive &
-        noncognitive skills, retention, and long-term outcomes such as college
-        enrollment and college completion[3].
+        It’s no secret: many problems permeate American education, and access to 
+        extracurricular activities is one of the largest inequities present. 
+        Low-income and racial minority students are at a structural disadvantage 
+        when it comes to accessing extracurricular activities, being three times 
+        less likely to participate in after-school programs<a href="#ref1">[1]</a>. Research has documented 
+        a consistently positive relationship between extracurricular 
+        participation and educational backgrounds<a href="#ref2">[2]</a>. More specifically, a student's 
+        participation in extracurricular activities has been linked to self-confidence, 
+        commitment to school values, heightened educational expectations, improved grades, 
+        higher standardized test scores, better cognitive & noncognitive skills, retention, 
+        and long-term outcomes such as college enrollment and college completion<a href="#ref3">[3]</a>. 
+        The COVID-19 pandemic has further illustrated and perpetuated the worsening disparities 
+        in access to extracurricular activities<a href="#ref4">[4]</a>.
       </p>
 
       <br />
+      <h4 style="width: 60%; margin-left: 20%">24.6M children would participate in an afterschool program if one were available in 2020:</h4>
+      <img src="img4StatesOnHover/National.png" style="margin-left: 40%"/> 
       <div
         id="usmap2"
-        style="width: 50%; height: 600px; margin-left: 25%"
-      ></div>
+        style="height: 500px; ">
+      </div>
       <br />
 
-      <h3 id="stemEcaImportance"><u>Importance of STEM Extracurricular</u></h3>
+      <h3 id="stemEcaImportance" class="divider line glow"><u>Why STEM Extracurriculars?</u></h3>
       <p>
-        The United States Bureau of Labor Statistics expects STEM occupations to
-        grow by 8% between 2019 and 2029, compared to 3.4% for non-STEM
-        occupations[4]. Wages for STEM occupations are also estimated to be more
-        than double those of non-STEM, potentially providing a pathway to
+        The United States Bureau of Labor Statistics expects STEM occupations to 
+        grow by 8% between 2019 and 2029, compared to 3.4% for non-STEM 
+        occupations<a href="#ref5">[5]</a>. Wages for STEM occupations are also estimated to be more 
+        than double those of non-STEM, potentially providing a pathway to 
         financial independence for students from low-income communities.
       </p>
 
+      <br />
       <select
         id="vBarChartData"
-        style="display: inline-block; margin-left: 25%; width: auto"
+        style="display: inline-block; margin-left: 35%; width: auto"
         onchange="selectVBarChartDataset(this.options[this.selectedIndex].value);"
         class="form-select"
       >
-        <option value="data1">Projected Employment Change 2019-29</option>
-        <option value="data2">Median Annual Wage(2020)</option>
+        <option value="Projected Employment Change(2019-29)">Projected Employment Change(2019-29)</option>
+        <option value="Median Annual Wage(2020)">Median Annual Wage(2020)</option>
       </select>
       <div
         id="vBarChart"
-        style="width: 50%; height: 500px; margin-left: 25%"
+        style="width: 60%; height: 400px; margin-left: 20%;"
       ></div>
+      <br />
 
       <p>
-        Research shows that the experience students have with STEM in
-        extracurricular settings can have a profound effect on their decision to
-        pursue STEM in college or as a career. Students benefit immensely from
-        the opportunity to engage in hands-on, informal STEM learning in
-        environments that provide encouragement [5]. Over the last decade, after
-        school programs have become a crucial means of access to these sorts of
-        environments.
+        Research shows that the experience students have with STEM in 
+        extracurricular settings can have a profound effect on their decision to 
+        pursue STEM in college or as a career. Students benefit immensely from 
+        the opportunity to engage in hands-on, informal STEM learning in 
+        environments that provide encouragement <a href="#ref6">[6]</a>. Over the last decade, after 
+        school programs have become a crucial means of access to these sorts of 
+        environments. 
       </p>
 
-      <div id="hzbarchart"></div>
+      <br />
+      <h4 style="width: 60%; margin-left: 20%">In a study by the PEAR institute of 160 afterschool STEM programs serving 1,600 students across 11 states:</h4>
+      <div id="hzbarchart" style="width: 60%; margin-left: 20%;"></div>
+      <br />
 
       <p>
-        Furthermore, after school extracurriculars in STEM are providing
-        learning opportunities in demographic groups traditionally
-        underrepresented in STEM.
+        Furthermore, after school extracurriculars in STEM are providing 
+        learning opportunities in demographic groups traditionally 
+        underrepresented in STEM. Hispanic and Black workers continue to 
+        be underrepresented in the STEM workforce, while White and Asian 
+        workers are overrepresented. Socioeconomically speaking, however, 
+        all races are disadvantaged<a href="#ref7">[7]</a>.
       </p>
 
+      <br />
       <select
         id="donutChartData"
         style="display: inline-block; margin-left: 25%; width: auto"
         onchange="selectDonutChartDataset(this.options[this.selectedIndex].value);"
-        class="form-select"
-      >
+        class="form-select">
         <option value="data1">
           Availability of afterschool STEM learning opportunities by ethnicity
         </option>
         <option value="data2">STEM jobs by race and ethnicity</option>
       </select>
-
-      <br />
-
       <div
         id="donutchart"
-        style="width: 100%; height: 400px; padding-top: 10px"
-      ></div>
-
+        style="width: 100%; height: 400px; padding-top: 10px">
+      </div>
       <br />
 
-      <h3 id="ecaGapStem"><u>The Extracurricular Gap as it Applies to STEM</u></h3>
+      <h3 id="ecaGapStem" class="divider line glow"><u>The Extracurricular Gap: For STEM</u></h3>
       <p>
-        Despite the clear importance of extracurricular STEM education, access
-        is less available to families with lower incomes and under-resourced
+        Despite the clear importance of extracurricular STEM education, access 
+        is less available to families with lower incomes and under-resourced 
         regions.
       </p>
 
+      <br />
       <select
-        style="display: inline-block; margin-left: 25%; width: auto"
+        style="display: inline-block; margin-left: 40%; width: auto"
         onchange="selectIncomeChartDataset(this.options[this.selectedIndex].value);"
-        class="form-select"
-      >
+        class="form-select">
         <option selected value="Technology and engineering">
           Technology and engineering
         </option>
@@ -248,27 +230,24 @@
       </select>
       <div
         id="incomeChart"
-        style="width: 60%; height: 400px; margin-left: 20%"
-      ></div>
-
-      <p>[This is a chart]</p>
+        style="width: 60%; height: 400px; margin-left: 20%">
+      </div>
+      <br />
 
       <!-- <div id="usamap" style="width: 60%; margin-left: 20%"></div> -->
 
       <p>
-        Further, barriers to participation have been increasing. Compared to
-        2014, challenges related to cost, transportation, and availability have
-        increased.
+        Further, barriers to participation have been increasing. Compared to 
+        2014, challenges related to cost, transportation, and availability have 
+        increased. 
       </p>
 
-      <p>[This is a chart]</p>
+      <br />
       <h4>Percentage of parents reporting that:</h4>
-
       <select
-        style="display: inline-block; margin-left: 25%; width: auto"
+        style="display: inline-block; margin-left: 30%; width: auto"
         onchange="selectParentsChartDataset(this.options[this.selectedIndex].value);"
-        class="form-select"
-      >
+        class="form-select">
         <option selected value="Programs are too expensive">
           Programs are too expensive
         </option>
@@ -281,27 +260,31 @@
       </select>
       <div
         id="parentsChart"
-        style="width: 60%; height: 400px; margin-left: 20%"
-      ></div>
+        style="width: 60%; height: 400px; margin-left: 20%">
+      </div>
+      <br />
+      
       <p>
-        Looking at the geographic distribution of where facilities for
-        extracurricular activities can occur, it is clear that access is not
-        uniform across the United States.
+        Looking at the geographic distribution of where facilities for 
+        extracurricular activities can occur, it is clear that access is not 
+        uniform across the United States. 
       </p>
 
-      <p>[This is a chart]</p>
-
       <br />
+      <p>[This is a chart]</p>
+      <br />
+      
 
-      <h3 id="movingForwards"><u>Moving Forwards</u></h3>
+      <h3 id="movingForwards" class="divider line glow"><u>Moving Forwards</u></h3>
       <p>
-        It is clear that the need for afterschool STEM extracurriculars exists,
-        while at the sametime barriers to participation have increased. Taken
-        together, these facts indicate that there needs to be greater investment
-        in extracurricular STEM from the federal, state, and local level. Both
-        public and private investment are needed now more than ever to provide
-        the diversity of experiences students need to inspire learning and
-        success, both in school and in life.
+        While it is clear that the need for after school STEM extracurriculars exists, 
+        barriers to participation have increased. Thus, these facts indicate that there 
+        needs to be greater investment in STEM extracurriculars from the federal, state, 
+        and local level. Schools do more than just provide academics: they are also spaces 
+        for social and emotional support, safety, food systems, and health care systems<a href="#ref8">[8]</a>. 
+        Both public and private investment in STEM extracurriculars are needed now more than 
+        ever: students need a diversity of experiences inspiring learning and success, both 
+        in school and in life.
       </p>
 
       <br />
@@ -310,36 +293,52 @@
             <script src="https://public.flourish.studio/resources/embed.js"></script>
         </div> -->
 
-      <h3 id="references"><u>Refereces</u></h3>
-      <ul>
-        <li>
-          [1] Little, Priscilla. “Taking a Systemic Approach to Access and
-          Equity in Afterschool.” Taking a Systemic Approach to Access and
-          Equity in Afterschool | John Gardner Center for Youth and Their
-          Communities, 26 May 2016,
-          https://gardnercenter.stanford.edu/news/taking-systemic-approach-access-and-equity-afterschool.
+      <h3 id="references" class="divider line glow"><u>Refereces</u></h3>
+      <ul id="ref">
+        <li id="ref1">
+          [1] <a href='https://gardnercenter.stanford.edu/news/taking-systemic-approach-access-and-equity-afterschool'>
+            Little, Priscilla. “Taking a Systemic Approach to Access and 
+          Equity in Afterschool.” Taking a Systemic Approach to Access and 
+          Equity in Afterschool | John Gardner Center for Youth and Their 
+          Communities, 26 May 2016.</a>
         </li>
-        <li>
+        <li id="ref2">
           [2] Jacquelynne S. Eccles, Bonnie L. Barber, Margaret Stone, James
           Hunt. Extracurricular activities and adolescent development, J. Social
           Issues, 59 (2003), pp. 865-889
         </li>
-        <li>
-          [3] Benjamin G. Gibbs, Lance D. Erickson, Mikaela J. Dufur, Aaron
+        <li id="ref3">
+          [3] <a href="https://doi.org/10.1016/j.ssresearch.2014.08.013">Benjamin 
+            G. Gibbs, Lance D. Erickson, Mikaela J. Dufur, Aaron
           Miles, Extracurricular associations and college enrollment, Social
-          Science Research, Volume 50, 2015, Pages 367-381, ISSN 0049-089X,
-          https://doi.org/10.1016/j.ssresearch.2014.08.013.
+          Science Research, Volume 50, 2015, Pages 367-381, ISSN 0049-089X.</a>
         </li>
-        <li>
-          [4] United States Department of Labor. (2021). Employment in STEM
-          occupations. U.S. Bureau of Labor Statistics. Retrieved from
-          https://www.bls. gov/emp/tables/stem-employment.htm
+        <li id="ref4">
+          [4] <a href="https://www.mckinsey.com/industries/public-and-social-sector/our-insights/covid-19-and-learning-loss-disparities-grow-and-students-need-help">
+            Dorn, Emma, et al. “Covid-19 and Learning Loss--Disparities Grow 
+          and Students Need Help.” McKinsey &amp; Company, McKinsey &amp; Company, 
+          23 June 2021.</a>
         </li>
-        <li>
-          [5] National Research Council. (2015). Identifying and Supporting
-          Productive Programs in Out-of-School Settings. The National Academies
-          Press. Retrieved from
-          https://www.nap.edu/catalog/21740/identifying-and-supporting-productive-stemprograms-in-out-of-school-settings.
+        <li id="ref5">
+          [5] <a href="https://www.bls.gov/emp/tables/stem-employment.htm">
+            United States Department of Labor. (2021). Employment in STEM 
+          occupations. U.S. Bureau of Labor Statistics.</a>
+        </li>
+        <li id="ref6">
+          [6] <a href="https://www.nap.edu/catalog/21740/identifying-and-supporting-productive-stemprograms-in-out-of-school-settings">
+          National Research Council. (2015). Identifying and Supporting 
+          Productive Programs in Out-of-School Settings. The National Academies Press.</a>
+        </li>
+        <li id="ref7">
+          [7] <a href="https://www.pewresearch.org/science/2021/04/01/stem-jobs-see-uneven-progress-in-increasing-gender-racial-and-ethnic-diversity/">
+          Fry, Richard, et al. “Stem Jobs See Uneven Progress in Increasing Gender, 
+          Racial and Ethnic Diversity.” Pew Research Center Science &amp; Society, 
+          Pew Research Center, 1 Apr. 2021.</a>
+        </li>
+        <li id="ref8">
+          [8] <a href="https://news.harvard.edu/gazette/story/2021/07/how-covid-taught-america-about-inequity-in-education/">
+          Simon, Clea. “How Covid Taught America about Inequity in Education.” 
+          Harvard Gazette, Harvard Gazette, 19 July 2021.</a>
         </li>
       </ul>
     </div>

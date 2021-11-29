@@ -6,23 +6,23 @@ var chart = am4core.create("hzbarchart", am4charts.XYChart);
 chart.responsive.enabled = true;
 
 // Create Title
-var title = chart.titles.create();
-title.text = "In a study by the PEAR institute of 160 afterschool STEM programs serving 1,600 students across 11 states:";
-title.fontSize = 15;
-title.marginBottom = 10;
+// var title = chart.titles.create();
+// title.text = "In a study by the PEAR institute of 160 afterschool \n STEM programs serving 1,600 students across 11 states:";
+// title.fontSize = 25;
+// title.marginBottom = 30;
 
 // Add data
 chart.data = [{
-  "description": "STEM career knowledge increased because of students' afterschool experience",
+  "description": "STEM career knowledge increased",
   "value": '80%'
 }, {
-  "description": "Had more postive attitude about STEM because of students' afterschool experience",
+  "description": "Had more postive attitude about STEM",
   "value": '78%'
 }, {
-  "description": "Had more postive STEM identity because of students' afterschool experience",
+  "description": "Had more postive STEM identity",
   "value": '73%'
 }, {
-  "description": "Perserverance and critical thinking skills increased because of students' afterschool experience",
+  "description": "Perserverance and critical thinking skills increased",
   "value": '72%'
 }];
 
@@ -43,6 +43,7 @@ var series = chart.series.push(new am4charts.ColumnSeries());
 series.dataFields.valueX = "value";
 series.dataFields.categoryY = "description";
 series.defaultState.transitionDuration = 10000;
+series.columns.template.tooltipText = "{description}";
 
 var valueLabel = series.bullets.push(new am4charts.LabelBullet());
 valueLabel.label.text = "{value}";

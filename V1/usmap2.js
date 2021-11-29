@@ -281,7 +281,7 @@ polygonSeries.data = [
   }
 ];
 
-// // Set up heat legend
+// Set up heat legend
 // let heatLegend = chart.createChild(am4maps.HeatLegend);
 // heatLegend.series = polygonSeries;
 // heatLegend.align = "right";
@@ -314,13 +314,26 @@ var hs = polygonTemplate.states.create("hover");
 //hs.properties.fill = am4core.color("#fa70ea");
 hs.properties.fill = am4core.color("#9a295b");
 
+// Add zoom control
+chart.zoomControl = new am4maps.ZoomControl();
+
+// Add button
+var button = chart.chartContainer.createChild(am4core.Button);
+button.padding(5, 5, 5, 5);
+button.align = "right";
+button.marginRight = 15;
+button.events.on("hit", function() {
+  chart.goHome();
+});
+
+button.icon = new am4core.Sprite();
+button.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
 
 // Add chart title
-var title = chart.titles.create();
-title.text = "24.6M children would participate in an afterschool program if one were available in 2020";
-title.fontSize = 25;
-title.marginBottom = 30;
-title.marginTop = 30;
+// var title = chart.titles.create();
+// title.text = "24.6M children would participate in an \n afterschool program if one were available in 2020";
+// title.fontSize = 25;
+// title.marginBottom = 30;
 
 
 // Add bottom label

@@ -1,0 +1,31 @@
+
+.divider {
+  display: flex;
+}
+.divider:before, .divider:after {
+  content: "";
+  flex: 1;
+}
+
+.line {
+  align-items: center;
+  margin: 1em -1em;
+}
+.line:before, .line:after {
+  height: 1px;
+  width: 100%;
+  margin: 0 1em;
+}
+
+.glow:before, .glow:after {
+  height: 6px;
+  -webkit-filter: blur(1px);
+  border-radius: 1px;
+}
+.glow:before {
+  background: linear-gradient(to right, blue, hotpink);
+}
+.glow:after {
+  background: linear-gradient(to left, blue, hotpink);
+}
+
