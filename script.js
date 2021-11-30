@@ -1,5 +1,43 @@
+// import * as d3 from "d3";
+console.log("hello");
+// import * as topojson from "topojson";
 // const chart = {
-d3 = require("d3@6");
+// d3 = require("d3@6");
+
+// countyData = data // need to find US data!!!
+// countyData = topojson.feature(countyData, countyData.objects.counties)
+// console.log('County Data')
+// console.log(countyData)
+// us = fetch("counties-albers-10m.json")
+countyURL = "counties-albers-10m.json"
+// .json()
+d3.json(countyURL).then(
+    (data, error) => {
+        if(error){
+            console.log(error)
+        }else{
+            countyData = data
+            console.log('County Data')
+            console.log(countyData)
+
+            d3.json(educationURL).then(
+                (data, error) => {
+                    if(error){
+                        console.log(error)
+                    }
+                    else{
+                        educationData = data
+                        console.log('Education Data')
+                        console.log(educationData)
+                        drawMap()
+                    }
+                }
+            )
+
+        }
+    }
+)
+
 const width = 975;
 const height = 610;
 
@@ -74,5 +112,5 @@ function zoomed(event) {
   g.attr("stroke-width", 1 / transform.k);
 }
 
-return svg.node();
+// return svg.node();
 //   }

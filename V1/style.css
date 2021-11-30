@@ -1,7 +1,9 @@
-body{
+
+.body {
   width: 65%;
   margin-left: 20%;
 }
+
 h1 {
   color: purple;
   text-align: center;
@@ -14,9 +16,11 @@ h3 {
   font-family: Monaco, monospace;
   font-style: italic;
 }
-#team{
+
+#team {
   color: purple;
 }
+
 h4 {
   text-align: center;
   font-family: Monaco, monospace;
@@ -39,14 +43,15 @@ p {
   font-weight: bold;
   font-family: Monaco, monospace;
 }
-text{
+text {
   justify-content: center;
 }
 
 .divider {
   display: flex;
 }
-.divider:before, .divider:after {
+.divider:before,
+.divider:after {
   content: "";
   flex: 1;
 }
@@ -55,13 +60,15 @@ text{
   align-items: center;
   margin: 1em -1em;
 }
-.line:before, .line:after {
+.line:before,
+.line:after {
   height: 1px;
   width: 100%;
   margin: 0 1em;
 }
 
-.glow:before, .glow:after {
+.glow:before,
+.glow:after {
   height: 6px;
   -webkit-filter: blur(1px);
   border-radius: 1px;
@@ -72,4 +79,3 @@ text{
 .glow:after {
   background: linear-gradient(to left, blue, hotpink);
 }
-

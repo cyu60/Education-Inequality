@@ -1,0 +1,6 @@
+GEOID,Name,State,Population density per km2,Rural-Urban Continuum Code,Poverty percentage,Poverty category,Hispanic or Latino (of any race),White,Black or African American,American Indian and Alaska Native,Asian,Native Hawaiian and Other Pacific Islander,Some other race,Two or more races,ILI density,Residual
+1001,Autauga,AL,35.75,2,13.7,2.0,1467,41509,10419,169,516,12,43,901,0.0026,-0.11
+1003,Baldwin,AL,49.39,3,11.8,2.0,9029,168951,19238,1528,1395,0,318,2901,0.00316,-0.07
+1005,Barbour,AL,11.43,6,27.2,5.0,1104,11985,12528,46,152,0,176,210,0.00175,0.11
+1007,Bibb,AL,14.01,1,15.2,3.0,531,16849,4959,82,0,0,0,159,0.00186,0.08
+1009,Blount,AL,34.53,1,15.6,3.0,5197,50381,879,193,84,0,126,807,0.0012,-0.88
