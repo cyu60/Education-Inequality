@@ -1,3 +1,47 @@
+body{
+  width: 65%;
+  margin-left: 20%;
+}
+h1 {
+  color: purple;
+  text-align: center;
+  font-family: Monaco, monospace;
+  font-size: 3vw;
+}
+h3 {
+  color: lightblue;
+  text-align: center;
+  font-family: Monaco, monospace;
+  font-style: italic;
+}
+#team{
+  color: purple;
+}
+h4 {
+  text-align: center;
+  font-family: Monaco, monospace;
+  font-style: bold;
+}
+p {
+  font-family: Monaco, monospace;
+}
+#ref {
+  font-family: Monaco, monospace;
+}
+
+#hzbarchart {
+  height: 230px;
+  font-family: Monaco, monospace;
+}
+
+#id-74 {
+  color: lightblue;
+  font-weight: bold;
+  font-family: Monaco, monospace;
+}
+text{
+  justify-content: center;
+}
 
 .divider {
   display: flex;
