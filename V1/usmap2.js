@@ -314,20 +314,22 @@ var hs = polygonTemplate.states.create("hover");
 //hs.properties.fill = am4core.color("#fa70ea");
 hs.properties.fill = am4core.color("#9a295b");
 
+chart.cursor.behavior = "none";
+
 // Add zoom control
-chart.zoomControl = new am4maps.ZoomControl();
+//chart.zoomControl = new am4maps.ZoomControl();
 
-// Add button
-var button = chart.chartContainer.createChild(am4core.Button);
-button.padding(5, 5, 5, 5);
-button.align = "right";
-button.marginRight = 15;
-button.events.on("hit", function() {
-  chart.goHome();
-});
+// Add Home Button
+// var button = chart.chartContainer.createChild(am4core.Button);
+// button.padding(5, 5, 5, 5);
+// button.align = "right";
+// button.marginRight = 15;
+// button.events.on("hit", function() {
+//   chart.goHome();
+// });
 
-button.icon = new am4core.Sprite();
-button.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
+// button.icon = new am4core.Sprite();
+// button.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
 
 // Add chart title
 // var title = chart.titles.create();
@@ -346,8 +348,6 @@ button.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8
 //   return html;
 // })
 // label.align = "center";
-
-
 
 
 // // heat legend behavior
