@@ -314,7 +314,7 @@ var hs = polygonTemplate.states.create("hover");
 //hs.properties.fill = am4core.color("#fa70ea");
 hs.properties.fill = am4core.color("#9a295b");
 
-chart.cursor.behavior = "none";
+//chart.cursor.behavior = "none";
 
 // Add zoom control
 //chart.zoomControl = new am4maps.ZoomControl();

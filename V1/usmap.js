@@ -305,6 +305,26 @@ polygonTemplate.strokeWidth = 0.5;
 var hs = polygonTemplate.states.create("hover");
 hs.properties.fill = am4core.color("#3c5bdc");
 
+//Add label
+// var clabel = chartmap.createChild(am4core.Label);
+// //label.isMeasured = false; //uncomment to make the label not adjust the rest of the chart elements to accommodate its placement
+// clabel.fontSize = 16;
+// clabel.x = am4core.percent(100);
+// clabel.horizontalCenter = "middle";
+// clabel.verticalCenter = "bottom";
+// clabel.align = "center";
+// clabel.html = "<ul><li>List item 1</li><li>List item 2</li></ul>";
+// clabel.toBack();
+
+var label = chartmap.createChild(am4core.Label);
+label.html = "<a href='https://www.science.org/doi/10.1126/sciadv.abb3819#supplementary-materials'>Data Source</a>";
+label.fontSize = 20;
+//label.align = "center";
+// clabel.horizontalCenter = "bottom";
+// clabel.verticalCenter = "bottom";
+label.x = 130;
+label.y = 10;
+label.toBack();
 
 // heat legend behavior
 polygonSeries_map.mapPolygons.template.events.on("over", function (event) {
